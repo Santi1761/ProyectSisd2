@@ -10,7 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import environ
+import os
 from pathlib import Path
+
+
+
+# Inicializar environ
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,10 +83,23 @@ WSGI_APPLICATION = 'TechServices.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'tech_services_mongo',
+        'CLIENT': {
+            'host': env('MONGODB_URI'),
+        }
     }
 }
+
+DATABASE_ROUTERS = ['bases.routers.DatabaseRouter']
 
 
 # Password validation

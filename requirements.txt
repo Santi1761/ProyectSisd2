@@ -1,0 +1,5 @@
+django-environ
+psycopg2
+djongo
+pymongo
+setuptools
