@@ -3,3 +3,4 @@ psycopg2
 djongo
 pymongo
 setuptools
+python-dotenv
