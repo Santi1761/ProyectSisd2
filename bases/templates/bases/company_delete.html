@@ -1,0 +1,7 @@
+<h1>¿Estás seguro que quieres eliminar esta compañía?</h1>
+<p>{{ company.name }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+    <a href="{% url 'company_list' %}">Cancelar</a>
+</form>
