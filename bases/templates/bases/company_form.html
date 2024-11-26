@@ -1,0 +1,15 @@
+<h1>{% if company %}Editar{% else %}Crear{% endif %} Compañía</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" id="name" value="{{ company.name|default_if_none:'' }}"><br>
+    <label for="nit">NIT:</label>
+    <input type="text" name="nit" id="nit" value="{{ company.nit|default_if_none:'' }}"><br>
+    <label for="industry">Industria:</label>
+    <input type="text" name="industry" id="industry" value="{{ company.industry|default_if_none:'' }}"><br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="{{ company.email|default_if_none:'' }}"><br>
+    <label for="state">Estado:</label>
+    <input type="text" name="state" id="state" value="{{ company.state|default_if_none:'' }}"><br>
+    <button type="submit">Guardar</button>
+</form>
