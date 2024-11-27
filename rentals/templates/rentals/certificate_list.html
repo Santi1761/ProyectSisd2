@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Certificates</title>
+</head>
+
+<body>
+    <h1>Delivery Certificates</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Certificate ID</th>
+                <th>Contract Number</th>
+                <th>Delivery Date</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for certificate in certificates %}
+            <tr>
+                <td>{{ certificate.certificate_id }}</td>
+                <td>{{ certificate.contract.contract_number }}</td>
+                <td>{{ certificate.delivery_date }}</td>
+                <td>{{ certificate.notes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

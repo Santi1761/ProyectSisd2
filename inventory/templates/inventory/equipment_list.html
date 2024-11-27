@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Equipment</title>
+</head>
+
+<body>
+    <h1>Available Equipment</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Inventory Code</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipment in equipment %}
+            <tr>
+                <td>{{ equipment.inventory_code }}</td>
+                <td>{{ equipment.description }}</td>
+                <td>{{ equipment.category.category_name }}</td>
+                <td>{{ equipment.active }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

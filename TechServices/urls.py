@@ -7,4 +7,7 @@ urlpatterns = [
     path('api/crm/', include('crm.urls')),
     path('api/rentals/', include('rentals.urls')),
     path('api/inventory/', include('inventory.urls')),
+
+    path('rentals/', include('rentals.urls')),
+    path('inventory/', include('inventory.urls')),
 ]

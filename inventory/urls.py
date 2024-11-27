@@ -1,7 +1,8 @@
+# inventory/urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('equipment/', views.EquipmentListView.as_view(), name='equipment-list'),
-    path('categories/', views.CategoryListView.as_view(), name='category-list'),
+    path('equipment/', views.equipment_list, name='equipment-list'),  # Ver equipos
+    path('categories/', views.category_list, name='category-list'),  # Ver categorías
 ]

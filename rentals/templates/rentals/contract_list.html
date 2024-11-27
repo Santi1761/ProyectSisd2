@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contracts List</title>
+</head>
+
+<body>
+    <h1>Contracts List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Contract ID</th>
+                <th>Contract Number</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Monthly Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contract in contracts %}
+            <tr>
+                <td>{{ contract.contract_id }}</td>
+                <td>{{ contract.contract_number }}</td>
+                <td>{{ contract.start_date }}</td>
+                <td>{{ contract.end_date }}</td>
+                <td>{{ contract.monthly_value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
