@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production! si estamos en modo de desarrollo, false para produccion 
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = [] # Dice que direcciones tiene permitido consultar a nuestro server
+ALLOWED_HOSTS = ['proyectsisd2.onrender.com'] # Dice que direcciones tiene permitido consultar a nuestro server
 
 RENDER_EXTERNAL_URL = os.environ.get('RENDER_EXTERNAL_URL')
 if RENDER_EXTERNAL_URL:
