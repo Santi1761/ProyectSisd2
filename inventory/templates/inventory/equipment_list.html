@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Equipment</title>
+    {% load static %} <!-- Cargar estáticos -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
@@ -29,6 +31,20 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <h2>Add a New Equipment</h2>
+    <form method="POST" action="{% url 'equipment-create' %}">
+        {% csrf_token %}
+        <input type="text" name="inventory_code" placeholder="Inventory Code" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <select name="category" required>
+            {% for category in categories %}
+            <option value="{{ category.category_id }}">{{ category.category_name }}</option>
+            {% endfor %}
+        </select>
+        <input type="checkbox" name="active" checked> Active
+        <button type="submit">Add Equipment</button>
+    </form>
 </body>
 
 </html>

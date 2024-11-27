@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Delivery Certificate</title>
+    {% load static %} <!-- Cargar estáticos -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <h1>Add New Delivery Certificate</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Certificate</button>
+    </form>
+    <a href="{% url 'certificate-list' %}">Back to Certificates List</a>
+</body>
+
+</html>

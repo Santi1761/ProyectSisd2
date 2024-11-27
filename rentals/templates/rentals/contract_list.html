@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contracts List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
@@ -31,6 +33,17 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <h2>Add a New Contract</h2>
+    <form method="POST" action="{% url 'contract-create' %}">
+        {% csrf_token %}
+        <input type="text" name="contract_id" placeholder="Contract ID" required>
+        <input type="text" name="contract_number" placeholder="Contract Number" required>
+        <input type="date" name="start_date" required>
+        <input type="date" name="end_date" required>
+        <input type="number" name="monthly_value" placeholder="Monthly Value" required>
+        <button type="submit">Add Contract</button>
+    </form>
 </body>
 
 </html>
