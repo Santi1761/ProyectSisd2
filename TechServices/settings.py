@@ -94,6 +94,7 @@ WSGI_APPLICATION = 'TechServices.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -103,16 +104,16 @@ DATABASES = {
         'HOST': env('POSTGRES_HOST'),
         'PORT': env('POSTGRES_PORT'),
     },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'tech_services_mongo',
-        'CLIENT': {
-            'host': env('MONGODB_URI'),
-        }
-    }
+    #'mongodb': {
+    #    'ENGINE': 'djongo',
+    #    'NAME': 'tech_services_mongo',
+    #    'CLIENT': {
+    #        'host': env('MONGODB_URI'),
+    #    }
+    #}
 }
 
-DATABASE_ROUTERS = ['bases.routers.DatabaseRouter']
+#DATABASE_ROUTERS = ['bases.routers.DatabaseRouter']
 
 
 # Password validation
