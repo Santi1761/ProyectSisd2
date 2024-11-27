@@ -4,21 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Contract</title>
+    <title>Create New Company</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
-    <h1>Add New Contract</h1>
+    <h1>Create New Company</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add Contract</button>
+        <button type="submit">Create Company</button>
     </form>
-
-    <!-- Botón para volver atrás -->
-    <a href="{% url 'contract-list' %}"><button>Back to Contracts List</button></a>
+    <a href="{% url 'company-list' %}">Back to Company List</a>
 </body>
 
 </html>

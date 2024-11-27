@@ -48,12 +48,12 @@ def contract_list(request):
     contracts = Contract.objects.all()
     return render(request, 'rentals/contract_list.html', {'contracts': contracts})
 
-def delivery_certificate_create(request):
+def certificate_create(request):
     if request.method == 'POST':
         form = DeliveryCertificateForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('certificate-list')
+            return redirect('certificate-list')  # Redirige a la lista de actas de entrega
     else:
         form = DeliveryCertificateForm()
     return render(request, 'rentals/certificate_create.html', {'form': form})

@@ -32,15 +32,8 @@
         </tbody>
     </table>
 
-    <h2>Add a New Delivery Certificate</h2>
-    <form method="POST" action="{% url 'certificate-create' %}">
-        {% csrf_token %}
-        <input type="text" name="certificate_id" placeholder="Certificate ID" required>
-        <input type="text" name="contract_id" placeholder="Contract ID" required>
-        <input type="date" name="delivery_date" required>
-        <textarea name="notes" placeholder="Notes" required></textarea>
-        <button type="submit">Add Certificate</button>
-    </form>
+    <!-- Botón para volver atrás -->
+    <a href="{% url 'index' %}"><button>Back to Home</button></a>
 </body>
 
 </html>
