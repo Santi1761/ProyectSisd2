@@ -104,14 +104,16 @@ DATABASES = {
         'HOST': env('POSTGRES_HOST'),
         'PORT': env('POSTGRES_PORT'),
     },
-    #'mongodb': {
-    #    'ENGINE': 'djongo',
-    #    'NAME': 'tech_services_mongo',
-    #    'CLIENT': {
-    #        'host': env('MONGODB_URI'),
-    #    }
-    #}
+    # MongoDB configuration
+    'mongodb': {
+        'ENGINE': '',  # No necesitas un ENGINE para PyMongo
+        'NAME': 'tech_services_mongo',  # Nombre de la base de datos en MongoDB
+        'CLIENT': {
+            'host': env('MONGODB_URI'),  # URL de conexión MongoDB
+        }
+    }
 }
+
 
 #DATABASE_ROUTERS = ['bases.routers.DatabaseRouter']
 
