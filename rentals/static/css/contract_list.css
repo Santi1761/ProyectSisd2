@@ -1,0 +1,199 @@
+/* Estilo para la página de contratos */
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    background-color: #f8f8f8;
+    color: #333333;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 2px solid #e2e2e2;
+    padding: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.8rem;
+    color: #4a90e2; /* Azul pastel */
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #6c757d;
+    background-color: #e2f0ff; /* Fondo azul pastel suave */
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #4a90e2;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content area */
+.content {
+    margin-left: 250px; /* Espacio para la barra lateral */
+    padding: 30px 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4a90e2; /* Azul pastel */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Cuerpo de la página */
+.content {
+    margin-left: 250px;  /* Asegura que el contenido no se solape con el sidebar */
+    padding: 30px;
+    background-color: #f8f8f8; /* Fondo suave */
+    color: #333333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4a90e2;  /* Título en azul pastel */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tabla */
+}
+
+table thead {
+    background-color: #4a90e2;  /* Encabezados de la tabla en azul pastel */
+    color: white;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 1rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Fondo alterno para filas */
+}
+
+table tr:hover {
+    background-color: #e0f2ff;  /* Resaltar fila al pasar el mouse */
+}
+
+/* Botón de regresar */
+.back-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #357ab7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
