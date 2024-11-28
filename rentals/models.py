@@ -1,4 +1,5 @@
 # rentals/models.py
+from mongoengine import Document, StringField, DateTimeField
 from django.db import models
 from crm.models import Company
 
@@ -21,3 +22,13 @@ class DeliveryCertificate(models.Model):
 
     def __str__(self):
         return self.certificate_id
+    
+class RentalProduct(Document):
+    product_name = StringField(required=True)
+    description = StringField()
+    user = StringField(required=True)   # Almacena el nombre de usuario como cadena
+    rent_date = DateTimeField()
+    return_date = DateTimeField()
+    
+    def __str__(self):
+        return self.product_name
