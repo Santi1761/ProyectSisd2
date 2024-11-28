@@ -1,18 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 from .views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'), 
+     # Redirige la raíz al login
+    path('', lambda request: redirect('login'), name='root'),
 
-    path('api/accounts/', include('accounts.urls')),
-    path('api/crm/', include('crm.urls')),
-    path('api/rentals/', include('rentals.urls')),
-    path('api/inventory/', include('inventory.urls')),
+    # Asegura que solo usuarios autenticados puedan ver el index
+    path('index/', login_required(index), name='index'),
 
+    path('accounts/', include('accounts.urls')),
+    path('crm/', include('crm.urls')),
     path('rentals/', include('rentals.urls')),
     path('inventory/', include('inventory.urls')),
-
-    path('crm/', include('crm.urls')),
 ]

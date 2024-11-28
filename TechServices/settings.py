@@ -15,6 +15,8 @@ import os
 from pathlib import Path
 
 
+LOGIN_REDIRECT_URL = 'bases/index'
+LOGOUT_REDIRECT_URL = 'accounts/login'
 
 # Inicializar environ
 env = environ.Env()
