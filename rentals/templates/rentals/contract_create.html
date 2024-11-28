@@ -6,21 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Contract</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 
 <body>
-    <h1>Add New Contract</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <div>
-            {{ form.as_p }} <!-- Esto incluirá todos los campos, incluyendo 'company' -->
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <h2>Tech Services</h2>
+            <ul>
+                <li><a href="{% url 'contract-list' %}">View Contracts</a></li>
+                <li><a href="{% url 'certificate-list' %}">View Delivery Certificates</a></li>
+                <li><a href="{% url 'equipment-list' %}">View Equipment</a></li>
+                <li><a href="{% url 'category-list' %}">View Categories</a></li>
+                <li><a href="{% url 'contract-create' %}">Add New Contract</a></li>
+                <li><a href="{% url 'certificate-create' %}">Add New Delivery Certificate</a></li>
+                <li><a href="{% url 'equipment-create' %}">Add New Equipment</a></li>
+                <li><a href="{% url 'category-create' %}">Add New Category</a></li>
+                <li><a href="{% url 'rent-product' %}">Rent a Product</a></li>
+                <li><a href="{% url 'rented-products' %}">View Rented Products</a></li>
+            </ul>
         </div>
-        <button type="submit">Add Contract</button>
-    </form>
 
-    <!-- Botón para volver atrás -->
-    <a href="{% url 'index' %}"><button>Back to Home</button></a>
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <h1>Add New Contract</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    {{ form.as_p }} <!-- Incluye todos los campos del formulario -->
+                </div>
+                <button type="submit">Add Contract</button>
+            </form>
+
+            <!-- Botón para volver atrás -->
+            <a href="{% url 'index' %}">
+                <button>Back to Home</button>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
