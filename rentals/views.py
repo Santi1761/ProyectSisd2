@@ -38,7 +38,9 @@ def contract_create(request):
     if request.method == 'POST':
         form = ContractForm(request.POST)
         if form.is_valid():
-            form.save()
+            contract = form.save(commit=False)  # No guardamos aún el contrato
+            contract.company = form.cleaned_data['company']  # Asignar la empresa seleccionada
+            contract.save()  # Ahora sí guardamos el contrato
             return redirect('contract-list')
     else:
         form = ContractForm()

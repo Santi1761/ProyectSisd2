@@ -13,7 +13,9 @@
     <h1>Add New Contract</h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div>
+            {{ form.as_p }} <!-- Esto incluirá todos los campos, incluyendo 'company' -->
+        </div>
         <button type="submit">Add Contract</button>
     </form>
 
