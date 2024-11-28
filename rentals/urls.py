@@ -7,4 +7,7 @@ urlpatterns = [
     path('contracts/create/', views.contract_create, name='contract-create'), 
     path('certificates/', views.certificate_list, name='certificate-list'),
     path('certificates/create/', views.certificate_create, name='certificate-create'),
+    path('rent/', views.rent_product, name='rent-product'),
+    path('rented/', views.rented_products, name='rented-products'),
+    
 ]

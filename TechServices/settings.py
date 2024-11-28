@@ -13,10 +13,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import environ
 import os
 from pathlib import Path
+from mongoengine import connect
 
 
 LOGIN_REDIRECT_URL = 'bases/index'
 LOGOUT_REDIRECT_URL = 'accounts/login'
+
+# Conectar a MongoDB
+connect(
+    db='tech_services_mongo',  # Nombre de tu base de datos
+    host=os.getenv('MONGODB_URI'),  # URI de conexión desde tu variable de entorno
+    alias='default'  # Alias predeterminado para esta conexión
+)
 
 # Inicializar environ
 env = environ.Env()
@@ -106,12 +114,11 @@ DATABASES = {
         'HOST': env('POSTGRES_HOST'),
         'PORT': env('POSTGRES_PORT'),
     },
-    # MongoDB configuration
     'mongodb': {
-        'ENGINE': '',  # No necesitas un ENGINE para PyMongo
-        'NAME': 'tech_services_mongo',  # Nombre de la base de datos en MongoDB
+        'ENGINE': '',
+        'NAME': 'tech_services_mongo',
         'CLIENT': {
-            'host': env('MONGODB_URI'),  # URL de conexión MongoDB
+            'host': env('MONGODB_URI'),
         }
     }
 }

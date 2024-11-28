@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rented Products</title>
+</head>
+<body>
+    <h1>Rented Products</h1>
+    <ul>
+        {% for product in rented_products %}
+            <li>{{ product.product_name }} {{product.description}} (Rented on: {{ product.rent_date }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'rent-product' %}">Rent another product</a>
+</body>
+</html>
