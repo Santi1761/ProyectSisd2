@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Delivery Certificate</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/certificate_create.css' %}">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
         <!-- Contenido principal -->
         <div class="main-content">
             <h1>Add New Delivery Certificate</h1>
-            <form method="POST">
+            <form class="styled-form" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Add Certificate</button>
