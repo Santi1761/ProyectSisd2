@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Tech Services</title>
     {% load static %} <!-- Cargar estáticos -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 
 <body>
-    <h1>Welcome to Tech Services</h1>
-    <p>Select a section to view or manage data:</p>
-    <ul>
-        <li><a href="{% url 'contract-list' %}">View Contracts</a></li>
-        <li><a href="{% url 'certificate-list' %}">View Delivery Certificates</a></li>
-        <li><a href="{% url 'equipment-list' %}">View Equipment</a></li>
-        <li><a href="{% url 'category-list' %}">View Categories</a></li>
-        <li><a href="{% url 'contract-create' %}">Add New Contract</a></li>
-        <li><a href="{% url 'certificate-create' %}">Add New Delivery Certificate</a></li>
-        <li><a href="{% url 'equipment-create' %}">Add New Equipment</a></li>
-        <li><a href="{% url 'category-create' %}">Add New Category</a></li>
-    </ul>
+    <div class="sidebar">
+        <h2>Tech Services</h2>
+        <ul>
+            <li><a href="{% url 'contract-list' %}">View Contracts</a></li>
+            <li><a href="{% url 'certificate-list' %}">View Delivery Certificates</a></li>
+            <li><a href="{% url 'equipment-list' %}">View Equipment</a></li>
+            <li><a href="{% url 'category-list' %}">View Categories</a></li>
+            <li><a href="{% url 'contract-create' %}">Add New Contract</a></li>
+            <li><a href="{% url 'certificate-create' %}">Add New Delivery Certificate</a></li>
+            <li><a href="{% url 'equipment-create' %}">Add New Equipment</a></li>
+            <li><a href="{% url 'category-create' %}">Add New Category</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Tech Services</h1>
+        <p>Select a section to view or manage data:</p>
+    </div>
 </body>
 
 </html>
