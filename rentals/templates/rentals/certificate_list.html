@@ -6,34 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Certificates</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/certificate_list.css' %}">
 </head>
 
 <body>
-    <h1>Delivery Certificates</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Certificate ID</th>
-                <th>Contract ID</th>
-                <th>Delivery Date</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for certificate in certificates %}
-            <tr>
-                <td>{{ certificate.certificate_id }}</td>
-                <td>{{ certificate.contract.contract_number }}</td>
-                <td>{{ certificate.delivery_date }}</td>
-                <td>{{ certificate.notes }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <h2>Tech Services</h2>
+            <ul>
+                <li><a href="{% url 'contract-list' %}">View Contracts</a></li>
+                <li><a href="{% url 'certificate-list' %}">View Delivery Certificates</a></li>
+                <li><a href="{% url 'equipment-list' %}">View Equipment</a></li>
+                <li><a href="{% url 'category-list' %}">View Categories</a></li>
+                <li><a href="{% url 'contract-create' %}">Add New Contract</a></li>
+                <li><a href="{% url 'certificate-create' %}">Add New Delivery Certificate</a></li>
+                <li><a href="{% url 'equipment-create' %}">Add New Equipment</a></li>
+                <li><a href="{% url 'category-create' %}">Add New Category</a></li>
+            </ul>
+        </div>
 
-    <!-- Botón para volver atrás -->
-    <a href="{% url 'index' %}"><button>Back to Home</button></a>
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <h1>Delivery Certificates</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Certificate ID</th>
+                        <th>Contract ID</th>
+                        <th>Delivery Date</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for certificate in certificates %}
+                    <tr>
+                        <td>{{ certificate.certificate_id }}</td>
+                        <td>{{ certificate.contract.contract_number }}</td>
+                        <td>{{ certificate.delivery_date }}</td>
+                        <td>{{ certificate.notes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Botón para volver atrás -->
+            <a href="{% url 'index' %}"><button>Back to Home</button></a>
+        </div>
+    </div>
 </body>
 
 </html>

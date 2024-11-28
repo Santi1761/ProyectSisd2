@@ -1,0 +1,116 @@
+/* General styles - Only apply on login and signup pages */
+body.login-page, body.signup-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column; /* Asegura que el contenido se alinee verticalmente */
+}
+
+/* Animated background - Only apply on login and signup pages */
+body.login-page .background-animation, body.signup-page .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e7a0bd, #e48696, #76b2e4, #525cec);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s infinite; /* Duración de la animación ajustada */
+    z-index: -1;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card styles */
+body.login-page .card, body.signup-page .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    z-index: 10;
+}
+
+body.login-page .card h2, body.signup-page .card h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center; /* Centra el título */
+}
+
+/* Form styles */
+body.login-page .form, body.signup-page .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body.login-page .form-group, body.signup-page .form-group {
+    text-align: left;
+}
+
+body.login-page .form-group label, body.signup-page .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+}
+
+body.login-page .form-group input, body.signup-page .form-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+body.login-page .form-group input:focus, body.signup-page .form-group input:focus {
+    border-color: #42a5f5;
+}
+
+/* Button styles */
+body.login-page .btn, body.signup-page .btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body.login-page .btn-primary, body.signup-page .btn-primary {
+    background: #42a5f5;
+    color: white;
+}
+
+body.login-page .btn-primary:hover, body.signup-page .btn-primary:hover {
+    background: #2a6192;
+}
+
+/* Links */
+body.login-page .card p, body.signup-page .card p {
+    margin-top: 15px;
+    color: #555555;
+    text-align: center; /* Centra el texto de los enlaces */
+}
+
+body.login-page .card a, body.signup-page .card a {
+    color: #42a5f5;
+    text-decoration: none;
+}
+
+body.login-page .card a:hover, body.signup-page .card a:hover {
+    text-decoration: underline;
+}

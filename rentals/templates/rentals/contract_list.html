@@ -6,36 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contracts List</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contract_list.css' %}">
+
 </head>
 
 <body>
-    <h1>Contracts List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Contract ID</th>
-                <th>Contract Number</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Monthly Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for contract in contracts %}
-            <tr>
-                <td>{{ contract.contract_id }}</td>
-                <td>{{ contract.contract_number }}</td>
-                <td>{{ contract.start_date }}</td>
-                <td>{{ contract.end_date }}</td>
-                <td>{{ contract.monthly_value }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="sidebar">
+        <h2>Tech Services</h2>
+        <ul>
+            <li><a href="{% url 'contract-list' %}">View Contracts</a></li>
+            <li><a href="{% url 'certificate-list' %}">View Delivery Certificates</a></li>
+            <li><a href="{% url 'equipment-list' %}">View Equipment</a></li>
+            <li><a href="{% url 'category-list' %}">View Categories</a></li>
+            <li><a href="{% url 'contract-create' %}">Add New Contract</a></li>
+            <li><a href="{% url 'certificate-create' %}">Add New Delivery Certificate</a></li>
+            <li><a href="{% url 'equipment-create' %}">Add New Equipment</a></li>
+            <li><a href="{% url 'category-create' %}">Add New Category</a></li>
+        </ul>
+    </div>
 
-    <!-- Botón para volver atrás -->
-    <a href="{% url 'index' %}"><button>Back to Home</button></a>
+    <div class="content">
+        <h1>Contracts List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Contract ID</th>
+                    <th>Contract Number</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Monthly Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contract in contracts %}
+                <tr>
+                    <td>{{ contract.contract_id }}</td>
+                    <td>{{ contract.contract_number }}</td>
+                    <td>{{ contract.start_date }}</td>
+                    <td>{{ contract.end_date }}</td>
+                    <td>{{ contract.monthly_value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Botón para volver atrás -->
+        <a href="{% url 'index' %}"><button class="back-button">Back to Home</button></a>
+    </div>
 </body>
 
 </html>
